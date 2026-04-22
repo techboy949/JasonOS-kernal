@@ -1,0 +1,4 @@
+Hello welcome to JasonOS
+The warning is This Jason kernal r boot.asm will have errors on this v0.1 beta edition
+DO NOT REPACE THIS OS WITH YOUR REAL COMPUTER Jason  isnt responsble unless chated with costurmer support
+This kernal is protected by the GNU Lincs DO  NOT COPY THE COE AND MAKE IT CLOSED-SOURCE IF DONE Please read the lince file
