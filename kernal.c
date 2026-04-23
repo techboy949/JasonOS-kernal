@@ -160,7 +160,7 @@ static void phase_copy_files(void){
     while(files[total]) total++;
     vga_clear(ATTR(LGREY,BLACK));
     vga_centre(10,"JasonOS",ATTR(WHITE,BLACK));
-    vga_centre(12,"Copying files",ATTR(LGREY,BLACK));
+    vga_centre(12,"Installing",ATTR(LGREY,BLACK));
     vga_putc(0,0,16,ATTR(YELLOW,BLACK));
     for(i=0;files[i];i++){
         int pct=((i+1)*100)/total;
@@ -188,7 +188,7 @@ static void phase_install_drivers(void){
     int c,row=6,i;
     vga_clear(ATTR(LGREY,BLUE));
     for(c=0;c<VGA_COLS;c++) vga_putc(0,c,' ',ATTR(WHITE,BLUE));
-    vga_puts(0,1,"JasonOS Hardware Detection",ATTR(WHITE,BLUE));
+    vga_puts(0,1,"JasonOS",ATTR(WHITE,BLUE));
     vga_centre(3,"Installing hardware",ATTR(WHITE,BLUE));
     vga_putc(0,0,16,ATTR(YELLOW,BLUE));
     for(i=0;drvs[i];i++){
@@ -207,7 +207,7 @@ static void phase_please_wait(void){
     vga_clear(ATTR(LGREY,BLUE));
     for(c=0;c<VGA_COLS;c++) vga_putc(0,c,' ',ATTR(WHITE,BLUE));
     vga_puts(0,1,"JasonOS",ATTR(WHITE,BLUE));
-    vga_centre(11,"Please wait ...",ATTR(WHITE,BLUE));
+    vga_centre(11,"Just a moment...",ATTR(WHITE,BLUE));
     vga_putc(0,0,16,ATTR(YELLOW,BLUE));
     delay(2);
 }
@@ -243,7 +243,7 @@ static int phase_oobe(void){
 static void phase_restart(void){
     vga_clear(ATTR(LGREY,BLACK));
     vga_centre(10,"JasonOS",ATTR(WHITE,BLACK));
-    vga_centre(12,"Your computer will restart...",ATTR(LGREY,BLACK));
+    vga_centre(12,"Restarting...",ATTR(LGREY,BLACK));
     vga_putc(0,0,16,ATTR(YELLOW,BLACK));
     delay(3); do_reboot();
 }
@@ -253,7 +253,7 @@ static void phase_preparing(void){
     vga_clear(ATTR(LGREY,BLUE));
     for(c=0;c<VGA_COLS;c++) vga_putc(0,c,' ',ATTR(WHITE,BLUE));
     vga_puts(0,1,"JasonOS",ATTR(WHITE,BLUE));
-    vga_centre(11,"Preparing your desktop ...",ATTR(WHITE,BLUE));
+    vga_centre(11,"Preparing For first use...",ATTR(WHITE,BLUE));
     for(i=0;i<4;i++){ vga_putc(13,37+i,'.',ATTR(YELLOW,BLUE)); delay(1); }
     delay(1);
 }
@@ -416,7 +416,7 @@ static void open_mypc(void){
     uint8_t wbg=ATTR(BLACK,LGREY);
     draw_window(2,5,16,45,"My PC",wbg);
     vga_puts(4, 7,"Drives:",ATTR(WHITE,LGREY));
-    vga_puts(6, 7,"[C:] Local Disk      JasonOS",ATTR(BLACK,LGREY));
+    vga_puts(6, 7,"[C:] OS",ATTR(BLACK,LGREY));
     vga_puts(8, 7,"[A:] Floppy Drive",ATTR(BLACK,LGREY));
     vga_puts(10,7,"[D:] CD-ROM Drive",ATTR(BLACK,LGREY));
     vga_puts(14,7,"Press Esc to close",ATTR(DGREY,LGREY));
@@ -478,7 +478,6 @@ static void phase_desktop(void){
     /* welcome window */
     draw_window(2,15,13,65,"Welcome to JasonOS",ATTR(BLACK,LGREY));
     vga_puts(4,17,"Welcome to JasonOS!",ATTR(WHITE,LGREY));
-    vga_puts(6,17,"Your desktop is ready.",ATTR(BLACK,LGREY));
     vga_puts(8,17,"Use the taskbar at the bottom to open apps.",ATTR(BLACK,LGREY));
     vga_puts(10,17,"Press Enter to close this window.",ATTR(BLACK,LGREY));
     vga_puts(12,50,"[ OK ]",ATTR(BLACK,LGREY));
@@ -617,7 +616,7 @@ static void phase_bsod(int code){
 
     vga_centre(3, ":(", ATTR(WHITE,BLUE));
     vga_centre(6, "JasonOS ran into a problem and needs to restart.", ATTR(WHITE,BLUE));
-    vga_centre(8, "A hardware self-test failure was detected.", ATTR(WHITE,BLUE));
+    vga_centre(8, "If your pc keeps booting into This screen  Please Contact your mnfuater", ATTR(WHITE,BLUE));
 
     /* error code line */
     static char codeline[40];
